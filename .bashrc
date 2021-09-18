@@ -27,11 +27,6 @@ export PATH="/snap/bin:$PATH"
 # Linuxbrew
 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
-# Fish Shell
-if [ -z "$FISH_VERSION" ]; then
-    command -v fish > /dev/null 2>&1 && exec fish
-fi
-
 # Open tmux
 if [[ ! -n $TMUX ]]; then
 	tmux new-session
@@ -39,4 +34,8 @@ fi
 
 if [[ ! -n $TMUX ]]; then
 	tmux new-session && exit
+fi
+
+if [ -z "$FISH_VERSION" ]; then
+    command -v fish > /dev/null 2>&1 && exec fish
 fi
