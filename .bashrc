@@ -17,6 +17,9 @@ if [ -d "/opt/ros" ]; then
     export ROSCONSOLE_FORMAT='[${severity}] [${time}] [${node}]: ${message}'
 fi
 
+# CONDA
+export PATH="/opt/conda/bin:$PATH"
+
 # CUDA
 export PATH="/usr/local/cuda/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
